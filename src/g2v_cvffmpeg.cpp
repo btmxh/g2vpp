@@ -3,13 +3,9 @@
 #include "opencv2/videoio.hpp"
 #include "glad.h"
 
-#include <iostream>
-
 g2v::CVFFmpegEncoder::CVFFmpegEncoder(g2v::RenderContext& ctx, const std::string& output, double fps, int64_t bitrate) : g2v::Encoder(ctx), m_writer(std::make_unique<cv::VideoWriter>()) {
     int codec = cv::VideoWriter::fourcc('X', '2', '6', '4');
     m_writer->open(output, codec, fps, {ctx.GetWidth(), ctx.GetHeight()}, true);
-
-    std::cout << cv::getBuildInformation() << std::endl;
 }
 
 void g2v::CVFFmpegEncoder::Encode() {
