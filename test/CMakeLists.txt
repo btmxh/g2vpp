@@ -6,6 +6,7 @@ add_executable(test main.cpp)
 
 set(TARGET_NAME test)
 include(${CMAKE_CURRENT_LIST_DIR}/../CMakeLists.txt)
+target_include_directories(test PRIVATE ${G2V_INCLUDE_DIRS})
 target_link_libraries(test PRIVATE g2vpp)
 
 # Use g2vpp embedded glad library

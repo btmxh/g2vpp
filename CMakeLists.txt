@@ -44,6 +44,4 @@ endif()
 target_include_directories(g2vpp PRIVATE ${CMAKE_CURRENT_LIST_DIR}/include)
 target_include_directories(g2vpp PRIVATE ${CMAKE_CURRENT_LIST_DIR}/glad)
 
-if(TARGET_NAME)
-    target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/include)
-endif()
+set(G2V_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/include)
